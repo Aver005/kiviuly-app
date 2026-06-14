@@ -55,9 +55,9 @@
    THEME TOKENS
    ============================================================ */
 @theme {
-  --color-ink: #0b0a09;
-  --color-ink-2: #121110;
-  --color-ink-3: #1b1916;
+  --color-ink: #050a06;
+  --color-ink-2: #0b150e;
+  --color-ink-3: #142019;
   --color-bone: #ece7da;
   --color-bone-dim: #9b958a;
   --color-bone-faint: #5f5b53;
@@ -98,6 +98,11 @@
   body {
     margin: 0;
     background-color: var(--color-ink);
+    /* faint green atmosphere washing down from the top */
+    background-image:
+      radial-gradient(130% 90% at 50% -20%, rgba(120, 190, 70, 0.07), transparent 55%),
+      radial-gradient(100% 70% at 100% 0%, rgba(70, 130, 80, 0.05), transparent 50%);
+    background-attachment: fixed;
     color: var(--color-bone);
     font-family: var(--font-sans);
     font-feature-settings: "ss01", "cv01";
@@ -133,11 +138,11 @@
     background: var(--color-ink);
   }
   ::-webkit-scrollbar-thumb {
-    background: #2a2723;
+    background: #233028;
     border-radius: 99px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #3a352f;
+    background: #324236;
   }
 
   h1,
