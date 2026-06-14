@@ -56,7 +56,7 @@ export function Footer() {
         <div className="mt-20 md:mt-28">
           <RisingText
             lines={[t.footer.word]}
-            className="block display text-outline text-[clamp(3.5rem,21vw,20rem)] leading-[0.8]"
+            className="block display text-outline text-[clamp(3.5rem,21vw,18rem)] leading-[0.8]"
           />
         </div>
 
