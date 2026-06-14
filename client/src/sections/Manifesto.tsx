@@ -28,7 +28,7 @@ export function Manifesto() {
         <Reveal>
           <p className="max-w-[64rem] text-pretty text-[clamp(1.75rem,4.6vw,4.25rem)] leading-[1.12] tracking-tight text-bone">
             {t.manifesto.quoteLead}{" "}
-            <span className="font-display text-[1.18em] leading-[0.8] text-ember align-baseline">
+            <span className="font-display text-[1.18em] leading-[0.8] text-acid align-baseline">
               {t.manifesto.quoteAccent}
             </span>{" "}
             {t.manifesto.quoteTail}

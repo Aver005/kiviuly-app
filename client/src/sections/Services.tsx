@@ -47,7 +47,7 @@ function ServiceRow({
       >
         <span className="col-span-2 font-mono text-xs text-bone-faint md:col-span-1">{item.n}</span>
 
-        <h3 className="col-span-10 display text-[clamp(1.9rem,6.2vw,5rem)] leading-[0.92] text-bone transition-all duration-500 group-hover:translate-x-2 group-hover:text-ember md:col-span-6">
+        <h3 className="col-span-11 display hyphens-auto text-[clamp(1.5rem,4.2vw,3.5rem)] leading-[0.95] text-bone transition-all duration-500 group-hover:translate-x-2 group-hover:text-acid md:col-span-6">
           {item.title}
         </h3>
 
@@ -65,7 +65,7 @@ function ServiceRow({
           </div>
         </div>
 
-        <span className="col-span-12 hidden items-start justify-end text-bone-faint transition-all duration-500 group-hover:text-ember md:col-span-1 md:flex">
+        <span className="col-span-12 hidden items-start justify-end text-bone-faint transition-all duration-500 group-hover:text-acid md:col-span-1 md:flex">
           <svg width="22" height="22" viewBox="0 0 24 24" className="transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1">
             <path d="M5 19L19 5M19 5H8M19 5v11" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
           </svg>

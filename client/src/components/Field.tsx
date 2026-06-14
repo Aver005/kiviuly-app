@@ -36,7 +36,7 @@ export function Field({
   const base =
     "w-full bg-transparent py-3 text-bone placeholder:text-bone-faint outline-none transition-colors duration-300";
   const border = error
-    ? "border-b border-ember"
+    ? "border-b border-acid"
     : "border-b border-line focus:border-bone";
 
   return (
@@ -44,7 +44,7 @@ export function Field({
       <span className="mb-1.5 flex items-baseline justify-between gap-3">
         <span className="font-mono text-[11px] tracking-[0.18em] text-bone-dim uppercase">{label}</span>
         {error ? (
-          <span className="font-mono text-[10px] tracking-wide text-ember">{error}</span>
+          <span className="font-mono text-[10px] tracking-wide text-acid">{error}</span>
         ) : optional ? (
           <span className="font-mono text-[10px] tracking-wide text-bone-faint">{optional}</span>
         ) : null}

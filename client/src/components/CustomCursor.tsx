@@ -50,8 +50,8 @@ export function CustomCursor() {
         animate={{
           width: ringSize,
           height: ringHeight,
-          borderColor: isLink || isView ? "var(--color-ember)" : "rgba(236,231,218,0.4)",
-          backgroundColor: isView ? "rgba(224,98,58,0.12)" : "rgba(236,231,218,0)",
+          borderColor: isLink || isView ? "var(--color-acid)" : "rgba(236,231,218,0.4)",
+          backgroundColor: isView ? "rgba(198, 255, 46,0.12)" : "rgba(236,231,218,0)",
           borderRadius: isText ? 2 : 999,
         }}
         transition={{ type: "spring", damping: 22, stiffness: 300, mass: 0.3 }}

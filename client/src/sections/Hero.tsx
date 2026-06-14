@@ -27,7 +27,7 @@ export function Hero() {
         style={{ y: glowY }}
         className="pointer-events-none absolute -top-1/4 left-1/2 h-[80vh] w-[80vh] -translate-x-1/2 rounded-full opacity-50 blur-[120px]"
       >
-        <div className="h-full w-full rounded-full bg-[radial-gradient(circle,rgba(224,98,58,0.22),transparent_62%)]" />
+        <div className="h-full w-full rounded-full bg-[radial-gradient(circle,rgba(198, 255, 46,0.22),transparent_62%)]" />
       </motion.div>
       <motion.div aria-hidden style={{ y: sparkY }} className="pointer-events-none absolute -right-24 top-24 text-ink-3 md:-right-10">
         <Spark size={520} spin className="opacity-[0.5]" />
@@ -41,7 +41,7 @@ export function Hero() {
           transition={{ delay: 0.2, duration: 1 }}
           className="kicker flex items-center gap-2"
         >
-          <Spark size={11} className="text-ember" />
+          <Spark size={11} className="text-acid" />
           {t.hero.kicker}
         </motion.span>
         <motion.span
@@ -67,7 +67,7 @@ export function Hero() {
             trigger="load"
             baseDelay={0.28}
             lines={[t.hero.lineMid]}
-            className="block pl-[6vw] text-[clamp(3.6rem,17vw,16rem)] leading-[0.82] text-ember md:pl-[12vw]"
+            className="block pl-[6vw] text-[clamp(3.6rem,17vw,16rem)] leading-[0.82] text-acid md:pl-[12vw]"
           />
           <RisingText
             trigger="load"
@@ -111,7 +111,7 @@ export function Hero() {
         <div className="relative h-12 w-px overflow-hidden bg-line">
           {!reduce && (
             <motion.div
-              className="absolute inset-x-0 top-0 h-1/2 bg-ember"
+              className="absolute inset-x-0 top-0 h-1/2 bg-acid"
               animate={{ y: ["-100%", "200%"] }}
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
             />

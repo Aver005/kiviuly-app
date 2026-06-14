@@ -16,7 +16,7 @@ export function Process() {
             </h2>
           </Reveal>
           <Reveal delay={0.1}>
-            <Spark size={40} className="text-ember" spin />
+            <Spark size={40} className="text-acid" spin />
           </Reveal>
         </div>
 
@@ -25,10 +25,10 @@ export function Process() {
             <Reveal key={step.n} delay={i * 0.08}>
               <li className="group relative flex h-full flex-col border-t border-line pt-7">
                 <div className="flex items-center justify-between">
-                  <span className="font-display text-[clamp(3rem,7vw,4.5rem)] leading-none text-bone transition-colors duration-500 group-hover:text-ember">
+                  <span className="font-display text-[clamp(3rem,7vw,4.5rem)] leading-none text-bone transition-colors duration-500 group-hover:text-acid">
                     {step.n}
                   </span>
-                  <span className="mb-2 h-1.5 w-1.5 rounded-full bg-bone-faint transition-colors duration-500 group-hover:bg-ember" />
+                  <span className="mb-2 h-1.5 w-1.5 rounded-full bg-bone-faint transition-colors duration-500 group-hover:bg-acid" />
                 </div>
                 <h3 className="mt-6 text-xl tracking-tight text-bone">{step.title}</h3>
                 <p className="mt-3 max-w-[22rem] text-pretty text-sm leading-relaxed text-bone-dim">

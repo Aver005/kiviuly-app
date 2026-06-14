@@ -41,7 +41,7 @@ export function Capabilities() {
           return (
             <Reveal key={i} delay={i * 0.1}>
               <div className="flex h-full flex-col border-t border-line pt-7">
-                <span className="font-display text-[clamp(3rem,8vw,6rem)] leading-none text-ember">
+                <span className="font-display text-[clamp(3rem,8vw,6rem)] leading-none text-acid">
                   {isLive ? <CountUp value={liveRequests} /> : stat.value}
                 </span>
                 <span className="mt-4 max-w-[16rem] text-sm leading-relaxed text-bone-dim">{stat.label}</span>

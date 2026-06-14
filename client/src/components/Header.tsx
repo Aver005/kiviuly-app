@@ -49,7 +49,7 @@ export function Header() {
             {...linkZone}
             aria-label="Kiviuly — наверх"
           >
-            <Spark size={18} className="text-ember transition-transform duration-700 group-hover:rotate-180" />
+            <Spark size={18} className="text-acid transition-transform duration-700 group-hover:rotate-180" />
             <span className="font-mono text-sm tracking-[0.32em]">{t.nav.brand}</span>
           </button>
 
@@ -64,7 +64,7 @@ export function Header() {
               >
                 <span className="mr-1.5 text-bone-faint">0{i + 1}</span>
                 {l.label}
-                <span className="absolute -bottom-1.5 left-0 h-px w-0 bg-ember transition-all duration-300 group-hover:w-full" />
+                <span className="absolute -bottom-1.5 left-0 h-px w-0 bg-acid transition-all duration-300 group-hover:w-full" />
               </button>
             ))}
           </nav>

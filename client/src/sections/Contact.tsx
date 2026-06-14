@@ -105,7 +105,7 @@ export function Contact() {
           </Reveal>
           <h2 className="mt-6 display text-[clamp(2.5rem,7vw,6.5rem)] leading-[0.86] text-bone">
             <RisingText lines={[t.contact.titleTop]} />
-            <RisingText lines={[t.contact.titleBot]} className="text-ember" baseDelay={0.08} />
+            <RisingText lines={[t.contact.titleBot]} className="text-acid" baseDelay={0.08} />
           </h2>
           <Reveal delay={0.1}>
             <p className="mt-10 max-w-md text-pretty text-base leading-relaxed text-bone-dim md:text-lg">
@@ -114,7 +114,7 @@ export function Contact() {
           </Reveal>
           <Reveal delay={0.15}>
             <div className="mt-12 flex items-center gap-3 text-bone-dim">
-              <Spark size={14} className="text-ember" />
+              <Spark size={14} className="text-acid" />
               <span className="font-mono text-xs tracking-wide">{t.footer.email}</span>
             </div>
           </Reveal>
@@ -169,7 +169,7 @@ export function Contact() {
                 </AnimatePresence>
 
                 {topError && (
-                  <p className="font-mono text-xs tracking-wide text-ember">{topError}</p>
+                  <p className="font-mono text-xs tracking-wide text-acid">{topError}</p>
                 )}
 
                 <SubmitButton pending={mutation.isPending} phase={phase} t={t} />
@@ -227,7 +227,7 @@ function SubmitButton({ pending, phase, t }: { pending: boolean; phase: Phase; t
       type="submit"
       disabled={pending}
       {...zone}
-      className="group relative mt-1 inline-flex items-center justify-center gap-3 overflow-hidden rounded-full bg-bone px-8 py-4 text-sm text-ink transition-colors duration-300 hover:bg-ember disabled:cursor-progress"
+      className="group relative mt-1 inline-flex items-center justify-center gap-3 overflow-hidden rounded-full bg-bone px-8 py-4 text-sm text-ink transition-colors duration-300 hover:bg-acid disabled:cursor-progress"
     >
       <span className="relative z-10">{label}</span>
       {!pending && (
@@ -268,8 +268,8 @@ function PowConsole({
         <div className="flex items-center justify-between text-bone-dim">
           <span className="flex items-center gap-2">
             <span className="relative flex h-2 w-2">
-              {!reduce && <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-ember opacity-70" />}
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-ember" />
+              {!reduce && <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-acid opacity-70" />}
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-acid" />
             </span>
             {solution && phase === "submitting" ? t.contact.pow.solved : label}
           </span>
@@ -283,15 +283,15 @@ function PowConsole({
         {/* progress bar */}
         <div className="relative mt-3 h-1 w-full overflow-hidden rounded bg-ink-3">
           {solution ? (
-            <div className="h-full w-full bg-ember" />
+            <div className="h-full w-full bg-acid" />
           ) : !reduce ? (
             <motion.div
-              className="absolute top-0 h-full w-2/5 rounded bg-ember"
+              className="absolute top-0 h-full w-2/5 rounded bg-acid"
               animate={{ left: ["-40%", "100%"] }}
               transition={{ duration: 1.1, repeat: Infinity, ease: "easeInOut" }}
             />
           ) : (
-            <div className="h-full w-1/3 bg-ember" />
+            <div className="h-full w-1/3 bg-acid" />
           )}
         </div>
 
@@ -306,10 +306,10 @@ function PowConsole({
         {/* solved hash reveal */}
         {solution && (
           <div className="mt-3 break-all leading-relaxed">
-            <span className="text-ember">{zeros}</span>
+            <span className="text-acid">{zeros}</span>
             <span className="text-bone-faint">{rest}</span>
             <div className="mt-2 flex justify-between text-bone-faint">
-              <span className="text-ember">{solution.bits} {t.contact.pow.bits}</span>
+              <span className="text-acid">{solution.bits} {t.contact.pow.bits}</span>
               <span>{solution.attempts.toLocaleString("ru-RU")} {t.contact.pow.attempts} · {Math.round(solution.ms)} ms</span>
             </div>
           </div>
@@ -330,7 +330,7 @@ function SuccessPanel({ ref_, email, onAgain, t }: { ref_: string; email: string
       transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
       className="flex min-h-96 flex-col items-start justify-center rounded-2xl border border-line bg-ink-2/50 p-10"
     >
-      <Spark size={44} className="text-ember" spin />
+      <Spark size={44} className="text-acid" spin />
       <h3 className="mt-8 display text-5xl text-bone">{t.contact.success.title}</h3>
       <p className="mt-4 max-w-sm text-pretty text-bone-dim">{body}</p>
       <button onClick={onAgain} {...zone} className="mt-8 font-mono text-xs tracking-[0.16em] text-bone underline-offset-4 hover:underline">

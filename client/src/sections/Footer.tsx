@@ -19,7 +19,7 @@ export function Footer() {
         <div className="flex flex-col justify-between gap-12 md:flex-row">
           <Reveal>
             <div className="flex items-center gap-3">
-              <Spark size={20} className="text-ember" spin />
+              <Spark size={20} className="text-acid" spin />
               <p className="max-w-xs text-pretty text-lg leading-snug text-bone">{t.footer.tagline}</p>
             </div>
           </Reveal>

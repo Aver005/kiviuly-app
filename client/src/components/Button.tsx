@@ -27,7 +27,7 @@ export function Button({
     "group relative inline-flex items-center gap-3 rounded-full px-7 py-3.5 text-sm tracking-wide transition-colors duration-300 disabled:opacity-50 disabled:pointer-events-none";
   const styles =
     variant === "primary"
-      ? "bg-bone text-ink hover:bg-ember hover:text-ink"
+      ? "bg-bone text-ink hover:bg-acid hover:text-ink"
       : "border border-line text-bone hover:border-bone hover:bg-bone/5";
 
   const btn = (

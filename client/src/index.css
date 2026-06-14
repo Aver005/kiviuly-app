@@ -61,8 +61,8 @@
   --color-bone: #ece7da;
   --color-bone-dim: #9b958a;
   --color-bone-faint: #5f5b53;
-  --color-ember: #e0623a;
-  --color-ember-soft: #c9764f;
+  --color-acid: #c6ff2e;
+  --color-acid-soft: #a6d63f;
   --color-line: rgba(236, 231, 218, 0.12);
 
   --font-display: "Femme Fatale", "Times New Roman", serif;
@@ -107,7 +107,7 @@
   }
 
   ::selection {
-    background: var(--color-ember);
+    background: var(--color-acid);
     color: var(--color-ink);
   }
 
@@ -120,7 +120,7 @@
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-ember);
+    outline: 2px solid var(--color-acid);
     outline-offset: 3px;
     border-radius: 2px;
   }
@@ -203,14 +203,14 @@
     color: transparent;
     -webkit-text-stroke: 1px var(--color-bone-dim);
   }
-  .text-outline-ember {
+  .text-outline-acid {
     color: transparent;
-    -webkit-text-stroke: 1px var(--color-ember);
+    -webkit-text-stroke: 1px var(--color-acid);
   }
 
-  /* Gradient text mask for the ember accent */
-  .text-ember-grad {
-    background: linear-gradient(180deg, var(--color-ember) 0%, var(--color-ember-soft) 100%);
+  /* Gradient text mask for the acid accent */
+  .text-acid-grad {
+    background: linear-gradient(180deg, var(--color-acid) 0%, var(--color-acid-soft) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
