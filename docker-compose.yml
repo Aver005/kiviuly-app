@@ -1,0 +1,36 @@
+services:
+  kiviuly:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: kiviuly:latest
+    container_name: kiviuly
+    restart: unless-stopped
+    # The one and only external port.
+    ports:
+      - "5678:5678"
+    environment:
+      PORT: "5678"
+      HOST: "0.0.0.0"
+      DB_PATH: "/data/kiviuly.db"
+      STATIC_DIR: "/app/client/dist"
+      # Override in .env — secures the proof-of-work signatures.
+      POW_SECRET: "${POW_SECRET:-change-me-in-production}"
+      POW_DIFFICULTY: "${POW_DIFFICULTY:-17}"
+    volumes:
+      - kiviuly-data:/data
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "bun",
+          "-e",
+          "fetch('http://localhost:5678/api/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))",
+        ]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+volumes:
+  kiviuly-data:

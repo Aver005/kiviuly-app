@@ -154,6 +154,8 @@
 @layer utilities {
   .font-display {
     font-family: var(--font-display);
+    /* Femme Fatale only ships uppercase glyphs — force it everywhere. */
+    text-transform: uppercase;
   }
   .font-mono {
     font-family: var(--font-mono);

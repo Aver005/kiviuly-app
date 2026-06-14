@@ -103,7 +103,7 @@ export function Contact() {
           <Reveal>
             <span className="kicker">{t.contact.kicker}</span>
           </Reveal>
-          <h2 className="mt-6 display text-[clamp(3rem,11vw,9rem)] leading-[0.84] text-bone">
+          <h2 className="mt-6 display text-[clamp(2.5rem,7vw,6.5rem)] leading-[0.86] text-bone">
             <RisingText lines={[t.contact.titleTop]} />
             <RisingText lines={[t.contact.titleBot]} className="text-ember" baseDelay={0.08} />
           </h2>
