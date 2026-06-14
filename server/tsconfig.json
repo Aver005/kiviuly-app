@@ -11,7 +11,11 @@
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": false,
     "esModuleInterop": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {
+      "zod": ["./node_modules/zod"]
+    }
   },
   "include": ["src/**/*.ts", "../shared/**/*.ts"]
 }

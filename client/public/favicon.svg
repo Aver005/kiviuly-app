@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" rx="14" fill="#0b0a09" />
+  <!-- four-point spark: the Kiviuly motif -->
+  <path
+    d="M32 8 C34 22 42 30 56 32 C42 34 34 42 32 56 C30 42 22 34 8 32 C22 30 30 22 32 8 Z"
+    fill="#ece7da"
+  />
+</svg>

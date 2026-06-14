@@ -1,0 +1,293 @@
+@import "tailwindcss";
+
+/* ============================================================
+   FONTS — self-hosted, subset by unicode-range for speed
+   ============================================================ */
+
+/* Display — the chosen "Femme Fatale": ornate, mystical, Cyrillic + Latin */
+@font-face {
+  font-family: "Femme Fatale";
+  src: url("/fonts/femme-fatale.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Body — Golos Text (variable), Cyrillic */
+@font-face {
+  font-family: "Golos Text";
+  src: url("/fonts/golos-cyrillic.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: "Golos Text";
+  src: url("/fonts/golos-latin.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+2000-206F, U+2074, U+20AC,
+    U+2122, U+2212, U+FEFF, U+FFFD;
+}
+
+/* Mono — IBM Plex Mono 500, for technical "studio" labels */
+@font-face {
+  font-family: "Plex Mono";
+  src: url("/fonts/plexmono-cyrillic.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: "Plex Mono";
+  src: url("/fonts/plexmono-latin.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+2000-206F, U+2074, U+20AC,
+    U+2122, U+2212, U+FEFF, U+FFFD;
+}
+
+/* ============================================================
+   THEME TOKENS
+   ============================================================ */
+@theme {
+  --color-ink: #0b0a09;
+  --color-ink-2: #121110;
+  --color-ink-3: #1b1916;
+  --color-bone: #ece7da;
+  --color-bone-dim: #9b958a;
+  --color-bone-faint: #5f5b53;
+  --color-ember: #e0623a;
+  --color-ember-soft: #c9764f;
+  --color-line: rgba(236, 231, 218, 0.12);
+
+  --font-display: "Femme Fatale", "Times New Roman", serif;
+  --font-sans: "Golos Text", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Plex Mono", ui-monospace, "SFMono-Regular", monospace;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+@layer base {
+  * {
+    border-color: var(--color-line);
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+    background-color: var(--color-ink);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--color-ink);
+    color: var(--color-bone);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv01";
+    line-height: 1.55;
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  ::selection {
+    background: var(--color-ember);
+    color: var(--color-ink);
+  }
+
+  /* Hide native cursor only where a real pointer exists (desktop). */
+  @media (pointer: fine) {
+    body.has-custom-cursor,
+    body.has-custom-cursor * {
+      cursor: none;
+    }
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-ember);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 9px;
+    height: 9px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-ink);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #2a2723;
+    border-radius: 99px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3a352f;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-weight: 400;
+    margin: 0;
+  }
+}
+
+/* ============================================================
+   UTILITIES & MOTIFS
+   ============================================================ */
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+
+  /* Editorial display headline: huge, tight, uppercase Cyrillic */
+  .display {
+    font-family: var(--font-display);
+    line-height: 0.84;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+  }
+
+  /* Small technical kicker label */
+  .kicker {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--color-bone-dim);
+  }
+
+  /* The recurring noise/grain — fixed full-screen overlay */
+  .grain {
+    position: fixed;
+    inset: -50%;
+    width: 200%;
+    height: 200%;
+    pointer-events: none;
+    z-index: 60;
+    opacity: 0.05;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* Hairline that draws itself */
+  .rule {
+    height: 1px;
+    background: var(--color-line);
+    transform-origin: left;
+  }
+
+  /* Outlined display text (used in the capabilities marquee) */
+  .text-outline {
+    color: transparent;
+    -webkit-text-stroke: 1px var(--color-bone-dim);
+  }
+  .text-outline-ember {
+    color: transparent;
+    -webkit-text-stroke: 1px var(--color-ember);
+  }
+
+  /* Gradient text mask for the ember accent */
+  .text-ember-grad {
+    background: linear-gradient(180deg, var(--color-ember) 0%, var(--color-ember-soft) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Footer / list link */
+  .footer-link {
+    width: fit-content;
+    text-align: left;
+    color: var(--color-bone-dim);
+    font-size: 0.9rem;
+    transition: color 0.3s var(--ease-out-expo);
+  }
+  .footer-link:hover {
+    color: var(--color-bone);
+  }
+
+  /* Container width helper */
+  .shell {
+    width: 100%;
+    max-width: 1440px;
+    margin-inline: auto;
+    padding-inline: clamp(1.25rem, 5vw, 5rem);
+  }
+
+  /* Sticky-letterspaced vertical text (side rails) */
+  .vertical-rl {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+  }
+}
+
+/* Marquee tracks (two copies side by side → translate by -50%) */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .marquee-track[data-dir="left"] {
+    animation: marquee-left var(--marquee-dur, 36s) linear infinite;
+  }
+  .marquee-track[data-dir="right"] {
+    animation: marquee-right var(--marquee-dur, 36s) linear infinite;
+  }
+  .marquee:hover .marquee-track {
+    animation-play-state: paused;
+  }
+}
+@keyframes marquee-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes marquee-right {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+
+/* Slow rotation for the spark motif */
+@media (prefers-reduced-motion: no-preference) {
+  .spin-slow {
+    animation: spin-slow 18s linear infinite;
+  }
+}
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+
+/* Animated grain drift (skipped for reduced motion) */
+@media (prefers-reduced-motion: no-preference) {
+  .grain {
+    animation: grain-drift 8s steps(6) infinite;
+  }
+  @keyframes grain-drift {
+    0% { transform: translate(0, 0); }
+    20% { transform: translate(-6%, 4%); }
+    40% { transform: translate(4%, -8%); }
+    60% { transform: translate(-3%, 6%); }
+    80% { transform: translate(7%, 2%); }
+    100% { transform: translate(0, 0); }
+  }
+}

@@ -11,7 +11,7 @@ export const POW = {
   /** How long a freshly minted challenge stays valid. */
   ttlMs: 5 * 60_000,
   /** Default difficulty in leading zero *bits* of the SHA-256 digest. */
-  defaultDifficulty: 18,
+  defaultDifficulty: 17,
   /** Guard rails the server enforces on incoming difficulty values. */
   minDifficulty: 8,
   maxDifficulty: 28,
