@@ -1,0 +1,15 @@
+{
+  "name": "kiviuly-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Kiviuly — landing for a young creative software studio",
+  "type": "module",
+  "scripts": {
+    "install:all": "cd client && bun install && cd ../server && bun install",
+    "dev:client": "cd client && bun run dev",
+    "dev:server": "cd server && bun run dev",
+    "dev": "concurrently -k -n client,server -c magenta,cyan \"bun run dev:client\" \"bun run dev:server\"",
+    "build": "cd client && bun install && bun run build",
+    "start": "cd server && bun install && bun run start"
+  }
+}

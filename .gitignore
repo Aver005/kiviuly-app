@@ -1,0 +1,36 @@
+# Source materials / working files (расходники)
+.dev/
+
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Build output
+client/dist/
+dist/
+
+# SQLite databases & runtime data
+*.db
+*.db-shm
+*.db-wal
+data/
+
+# Env & secrets
+.env
+.env.local
+*.local
+
+# Logs
+*.log
+npm-debug.log*
+bun-debug.log*
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# Bun
+.bun/
