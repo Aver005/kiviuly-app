@@ -4,7 +4,7 @@
 # ============================================================
 
 # ---- Stage 1: build the client (Vite) ----
-FROM oven/bun:1.3 AS client-build
+FROM oven/bun:1.4 AS client-build
 WORKDIR /app
 # deps first for better layer caching
 COPY client/package.json client/bun.lock ./client/
@@ -14,13 +14,13 @@ COPY client ./client
 RUN cd client && bun run build
 
 # ---- Stage 2: install server deps ----
-FROM oven/bun:1.3 AS server-deps
+FROM oven/bun:1.4 AS server-deps
 WORKDIR /app
 COPY server/package.json server/bun.lock ./server/
 RUN cd server && bun install --frozen-lockfile --production
 
 # ---- Stage 3: runtime ----
-FROM oven/bun:1.3-slim AS runtime
+FROM oven/bun:1.4-slim AS runtime
 WORKDIR /app
 ENV NODE_ENV=production \
     PORT=5678 \
